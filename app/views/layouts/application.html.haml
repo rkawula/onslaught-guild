@@ -18,10 +18,6 @@
         %a.navbar-brand{:href => root_path}Onslaught - Alliance on Vek'nilash US
       / Collect the nav links, forms, and other content for toggling
       #bs-example-navbar-collapse-1.collapse.navbar-collapse
-        %form.navbar-form.navbar-left{:role => "search"}
-          .form-group
-            %input.form-control{:placeholder => "Search", :type => "text"}
-          %button.btn.btn-default{:type => "submit"} Submit
         %ul.nav.navbar-nav
           %li.dropdown
             %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
@@ -38,6 +34,9 @@
                 %a{:href => "#"} Members
               %li
                 %a{:href => "#"} Forum
+        %ul.nav.navbar-nav.navbar-right
+          %li
+            %a{:href => "#"} Log in with Battle.net
       / /.navbar-collapse
     / /.container-fluid
   = yield
