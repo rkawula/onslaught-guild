@@ -2,6 +2,9 @@
 %html
   %head
     %title Onslaught Guild
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
+    %meta{:charset => "utf-8"}
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
@@ -15,7 +18,7 @@
           %span.icon-bar
           %span.icon-bar
           %span.icon-bar
-        %a.navbar-brand{:href => root_path}Onslaught - Alliance on Vek'nilash US
+        %a.navbar-brand{:href => root_path}Onslaught - US Vek'nilash
       / Collect the nav links, forms, and other content for toggling
       #bs-example-navbar-collapse-1.collapse.navbar-collapse
         %ul.nav.navbar-nav
@@ -31,7 +34,10 @@
             %a{:href => apply_path} Apply
         %ul.nav.navbar-nav.navbar-right
           %li
-            %a{:href => "#"} Log in with Battle.net
+            - if current_user
+              %a{:href => logout_path} Logout
+            - else
+              %a{:href => login_path} Log in with Battle.net
       / /.navbar-collapse
     / /.container-fluid
   = yield
