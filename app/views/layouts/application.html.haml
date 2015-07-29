@@ -34,10 +34,10 @@
             %a{:href => apply_path} Apply
         %ul.nav.navbar-nav.navbar-right
           %li
-            - if current_user
-              %a{:href => logout_path} Logout
+            - if logged_in?
+              = link_to 'Logout', logout_path
             - else
-              %a{:href => login_path} Log in with Battle.net
+              = link_to 'Log in with Battle.net', login_path
       / /.navbar-collapse
     / /.container-fluid
   = yield

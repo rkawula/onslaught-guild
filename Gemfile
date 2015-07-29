@@ -11,6 +11,7 @@ gem 'jbuilder', 				'2.2.3'
 gem 'sdoc', 					'0.4.0', group: :doc
 gem 'omniauth-bnet', 			'1.1.0'
 gem 'figaro',					'1.1.1'
+gem 'rack-ssl-enforcer'
 
 group :production do
   gem 'pg',						'0.17.1'

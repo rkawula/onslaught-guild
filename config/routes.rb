@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
 
   root 'guild#index'
-
+  resources :users
+  get '/auth/:provider/callback', to: 'sessions#create'
+  get '/login', to: 'sessions#new', :as => :login
+  get '/logout', to: 'sessions#destroy', :as => :logout
+  get '/auth/failure', to: 'sessions#failure'
   
-  get 'login', to: 'sessions#new'
-  get 'auth/bnet', to: 'sessions#create'
-  get 'logout', to: 'sessions#destroy'
-
   get 'blog', to: 'guild#blog'
   get 'events', to: 'guild#events'
   get 'forum', to: 'guild#forum'

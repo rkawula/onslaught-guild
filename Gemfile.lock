@@ -101,6 +101,7 @@ GEM
       omniauth (~> 1.2)
     pg (0.17.1-x86-mingw32)
     rack (1.6.4)
+    rack-ssl-enforcer (0.2.9)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.2)
@@ -178,6 +179,7 @@ DEPENDENCIES
   jquery-rails (= 4.0.3)
   omniauth-bnet (= 1.1.0)
   pg (= 0.17.1)
+  rack-ssl-enforcer
   rails (= 4.2.2)
   rails_12factor (= 0.0.2)
   sass-rails (= 5.0.2)
