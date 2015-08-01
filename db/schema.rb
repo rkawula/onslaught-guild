@@ -13,7 +13,14 @@
 
 ActiveRecord::Schema.define(version: 20150801043931) do
 
-# Could not dump table "users" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
+  create_table "users", force: :cascade do |t|
+    t.string   "name"
+    t.string   "provider"
+    t.string   "uid"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
+  end
 
 end
