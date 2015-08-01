@@ -1,12 +1,11 @@
 class User < ActiveRecord::Base
 
   def self.find_or_create(auth)
-    @user = where(provider: auth['provider'], uid: auth['uid'].to_s).first
+    @user = find_by(provider: auth['provider'], uid: auth['uid']).first
     unless @user
-      User.create! do
-        @user.provider = auth['provider']
-        @user. id = auth['uid'].to_s
-      end
+      @user = User.create! provider: auth['provider'],
+                           name: auth['info']['name'],
+                           uid: auth['uid'].to_s
     end
     return @user
   end
