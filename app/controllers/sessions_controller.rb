@@ -7,10 +7,11 @@ class SessionsController < ApplicationController
   def create
   	# render text: request.env['omniauth.auth'].to_yaml
     auth = request.env["omniauth.auth"]
+    raise params.inspect
     @user = User.find_or_create(auth)
 	reset_session
 	session[:user_id] = @user.uid
-	redirect_to root_url, :notice => 'Signed in!'
+	#redirect_to root_url, :notice => 'Signed in!'
   end
 
   def destroy
