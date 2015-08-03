@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20150803001714) do
     t.datetime "updated_at",                   null: false
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
-    t.integer  "permission_level", default: 0
+    t.integer  "permission_level", default: 4
   end
 
 end
