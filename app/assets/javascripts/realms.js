@@ -3,7 +3,7 @@ d3.json("https://us.api.battle.net/wow/realm/status?locale=en_US&apikey=g4z3ngfm
 
   root['realms'].forEach(function(realm) {
   	console.log(realm.name);
-  })
+  });
   
 
 });

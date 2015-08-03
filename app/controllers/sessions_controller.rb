@@ -6,7 +6,6 @@ class SessionsController < ApplicationController
 
   def create
   auth = request.env["omniauth.auth"]
-  raise auth.to_yaml
   @user = User.find_or_create(auth)
 	reset_session
 	session[:user_id] = @user.id
