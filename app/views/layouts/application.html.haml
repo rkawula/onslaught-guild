@@ -9,35 +9,5 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-  %nav.navbar.navbar-default
-    .container-fluid
-      / Brand and toggle get grouped for better mobile display
-      .navbar-header
-        %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
-          %span.sr-only Toggle navigation
-          %span.icon-bar
-          %span.icon-bar
-          %span.icon-bar
-        %a.navbar-brand{:href => root_path}Onslaught - US Vek'nilash
-      / Collect the nav links, forms, and other content for toggling
-      #bs-example-navbar-collapse-1.collapse.navbar-collapse
-        %ul.nav.navbar-nav
-          %li
-            %a{:href => blog_path} Blog
-          %li
-            %a{:href => events_path} Events
-          %li
-            %a{:href => forum_path} Forum
-          %li
-            %a{:href => history_path} Who We Are
-          %li
-            %a{:href => apply_path} Apply
-        %ul.nav.navbar-nav.navbar-right
-          %li
-            - if logged_in?
-              = link_to 'Logout', logout_path
-            - else
-              = link_to 'Log in with Battle.net', login_path
-      / /.navbar-collapse
-    / /.container-fluid
-  = yield
+    = render 'layouts/navbar'
+    = yield
