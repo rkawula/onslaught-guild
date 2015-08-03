@@ -5,10 +5,6 @@ class GuildController < ApplicationController
   	
   end
 
-  def blog
-
-  end
-
   def events
 
   end

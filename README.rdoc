@@ -1,28 +1,17 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Current planned models:
 
-Things you may want to cover:
+User has_many Post
+Post belongs_to User (must be permission level < 4), Forum
+One of the forums is "Front Page" forum (or "Blog" forum), only users with permission level 0 or 1 can create a Post that belongs_to this special forum.
 
-* Ruby version
+Forum has a visibility:integer column, inidicating the permission level required to be viewed
 
-* System dependencies
+User has_many Comment
+Comment belongs_to User, Post
 
-* Configuration
+Private forum:
+current_user must exist
+current_user must have permission_level > # (4 for guild&friends-wide visibility, 2 for high-rank officers only)
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.

@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   get '/auth/failure', to: 'sessions#failure'
   
   # Basic website sections
-  get 'blog', to: 'guild#blog'
   get 'events', to: 'guild#events'
   get 'forum', to: 'guild#forum'
   get 'history', to: 'guild#history'
