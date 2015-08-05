@@ -4,7 +4,7 @@ RSpec.describe SessionsController, type: :controller do
 
 	describe "GET #new" do
 
-		it 'should redirect the user to log in with battle.net' do
+		it 'redirects the user to log in with battle.net' do
 			get :new
 			expect(response).to redirect_to '/auth/bnet'
 		end
@@ -26,7 +26,7 @@ RSpec.describe SessionsController, type: :controller do
 				allow(User).to receive(:find_or_create).with(:hash).and_return @fake_user
 			end
 
-			it 'should start a new session and redirect to the homepage' do
+			it 'starts a new session and redirect to the homepage' do
 				get :create, :provider => 'bnet'
 				expect(response).to redirect_to root_url
 				expect(session[:user_id]).to eq @fake_user.id
@@ -36,7 +36,7 @@ RSpec.describe SessionsController, type: :controller do
 
 	describe 'GET #destroy' do
 
-		it 'should end the session' do
+		it 'ends the session' do
 			get :destroy
 			expect(session[:user_id]).to be_nil
 			expect(response).to redirect_to root_url
@@ -45,7 +45,7 @@ RSpec.describe SessionsController, type: :controller do
 	end
 
 	describe 'GET #failure' do
-		it 'should return to the home page' do
+		it 'returns to the home page' do
 			get :failure
 			expect(response).to redirect_to root_url
 		end

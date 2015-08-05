@@ -21,7 +21,8 @@ end
 group :development, :test do
   gem 'byebug',					'3.4.0'
   gem 'sqlite3',				'1.3.10'
-  gem 'rspec-rails'
+  gem 'rspec-rails',			'3.3.3'
+  gem 'factory_girl_rails',		'4.5.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

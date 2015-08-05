@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-  validates :permission_level, inclusion: { in: [0,4] } 
+  validates :permission_level, inclusion: { in: 0..4 } 
 
   def self.find_or_create(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_initialize do |user|
