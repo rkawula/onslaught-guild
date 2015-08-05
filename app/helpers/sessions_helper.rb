@@ -26,5 +26,9 @@ module SessionsHelper
     def permission
     	return logged_in ? current_user.permission_level : GUEST_PERMISSION_LEVEL
     end
+
+    def auth_hash
+      request.env["omniauth.auth"]
+    end
   
 end

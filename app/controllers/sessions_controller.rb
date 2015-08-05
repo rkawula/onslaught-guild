@@ -5,20 +5,19 @@ class SessionsController < ApplicationController
   end
 
   def create
-  auth = request.env["omniauth.auth"]
-  @user = User.find_or_create(auth)
-	reset_session
-	session[:user_id] = @user.id
-	redirect_to root_url, :notice => 'Signed in!'
+    @user = User.find_or_create(auth_hash)
+	  reset_session
+	  session[:user_id] = @user.id
+	  redirect_to root_url
   end
 
   def destroy
     reset_session
-    redirect_to root_url, :notice => "Signed out!"
+    redirect_to root_url
   end
 
   def failure
-  	redirect_to root_url, :alert => "Authentication error: #{params[:message].humanize}"
+  	redirect_to root_url
   end
 
 end
