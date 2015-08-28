@@ -23,6 +23,9 @@ group :development, :test do
   gem 'sqlite3',				'1.3.10'
   gem 'rspec-rails',			'3.3.3'
   gem 'factory_girl_rails',		'4.5.0'
+  gem 'cucumber-rails',	require: false
+  gem 'database_cleaner'
+  gem 'gherkin', platforms: :ruby
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
