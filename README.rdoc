@@ -15,3 +15,12 @@ Private forum:
 current_user must exist
 current_user must have permission_level > # (4 for guild&friends-wide visibility, 2 for high-rank officers only)
 
+== TODO
+
+Vagrantfile: bundler wasn't properly installed through chef, had to 'gem install bundler' once inside the VM. Need to test if this requires a fix or if it was a one-off bug.
+
+Currently, after using 'vagrant up', you still need to run 'sudo apt-get install libpq-dev', then 'gem install pg'.
+
+Also 'sudo apt-get install postgresql'.
+
+Then 'sudo -u postgres createuser --createdb vagrant'

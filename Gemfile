@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.2.0'
+
 gem 'rails', 					'4.2.2'
 gem 'sass-rails', 				'5.0.2'
 gem 'haml'
@@ -12,15 +14,14 @@ gem 'sdoc', 					'0.4.0', group: :doc
 gem 'omniauth-bnet', 			'1.1.0'
 gem 'figaro',					'1.1.1'
 gem 'rack-ssl-enforcer'
+gem 'pg',						'0.17.1'
 
 group :production do
-  gem 'pg',						'0.17.1'
   gem 'rails_12factor', 		'0.0.2'
 end
 
 group :development, :test do
   gem 'byebug',					'3.4.0'
-  gem 'sqlite3',				'1.3.10'
   gem 'rspec-rails',			'3.3.3'
   gem 'factory_girl_rails',		'4.5.0'
   gem 'cucumber-rails',	require: false
