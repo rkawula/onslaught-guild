@@ -20,8 +20,6 @@ Vagrant.configure(2) do |config|
       chef.add_recipe "rbenv::user"
       chef.add_recipe "rbenv::vagrant"
       chef.add_recipe "vim"
-      chef.add_recipe "mysql::server"
-      chef.add_recipe "mysql::client"
 
       chef.json = {
         rbenv: {
@@ -35,9 +33,6 @@ Vagrant.configure(2) do |config|
               }]
             }
           }]
-        },
-        mysql: {
-          server_root_password: ''
         }
       }
   end

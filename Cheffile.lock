@@ -11,8 +11,6 @@ SITE
     chef_handler (1.2.0)
     homebrew (2.0.5)
       build-essential (>= 2.1.2)
-    mysql (5.5.3)
-      yum-mysql-community (>= 0.0.0)
     nodejs (2.4.4)
       apt (>= 0.0.0)
       ark (>= 0.0.0)
@@ -26,8 +24,6 @@ SITE
     yum (3.9.0)
     yum-epel (0.6.5)
       yum (~> 3.2)
-    yum-mysql-community (0.1.21)
-      yum (>= 3.2)
 
 GIT
   remote: https://github.com/aminin/chef-rbenv
@@ -39,7 +35,6 @@ GIT
 DEPENDENCIES
   apt (>= 0)
   build-essential (>= 0)
-  mysql (= 5.5.3)
   nodejs (>= 0)
   rbenv (>= 0)
   ruby_build (>= 0)
