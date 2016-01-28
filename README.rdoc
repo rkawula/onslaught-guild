@@ -8,6 +8,8 @@ One of the forums is "Front Page" forum (or "Blog" forum), only users with permi
 
 Forum has a visibility:integer column, inidicating the permission level required to be viewed
 
+Topic (aka Thread) belongs to a forum, has many Post.
+
 User has_many Comment
 Comment belongs_to User, Post
 
@@ -22,16 +24,17 @@ Install ChefDK, VirtualBox, Vagrant
 1. Clone the project
 2. cd into the cloned folder and type 'vagrant up'
 3. If Chef succeeds, 'vagrant ssh'
-4. 
+4. 'cd /vagrant'
+5. 'rbenv rehash'
+6. 'gem install bundle'
+7. 'rbenv rehash'
+8. 'bundle install --without production'
+9. 'rake db:migrate'
+10. 'rbenv rehash'
+11. 'rails s -b 0.0.0.0'
 
 == TODO
 
-Vagrantfile: bundler wasn't properly installed through chef, had to 'gem install bundler' once inside the VM. Need to test if this requires a fix or if it was a one-off bug.
-
-Currently, after using 'vagrant up', you still need to run 'sudo apt-get install libpq-dev', then 'gem install pg'.
-
-Also 'sudo apt-get install postgresql'.
-
-Then 'sudo -u postgres createuser --createdb vagrant'
+Vagrantfile: get rid of annoying steps post-vagrant.
 
 To bring up the server, use 'rails s -b 0.0.0.0' instead of 'rails s' to allow for port forwarding from VM to host.
