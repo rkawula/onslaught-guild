@@ -11,8 +11,10 @@ Rails.application.routes.draw do
   
   # Basic website sections
   get 'events', to: 'guild#events'
-  get 'forum', to: 'guild#forum'
   get 'history', to: 'guild#history'
   get 'apply', to: 'guild#apply'
+
+  # Forum
+  resources :forum, only: [:index, :show]
 
 end

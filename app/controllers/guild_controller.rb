@@ -9,10 +9,6 @@ class GuildController < ApplicationController
 
   end
 
-  def forum
-
-  end
-
   def history
   	
   end
