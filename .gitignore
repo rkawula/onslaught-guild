@@ -20,8 +20,7 @@
 /config/application.yml
 
 # Ignore Chef & Librarian files
-chef/cookbooks
-chef/tmp
+/cookbooks
 [Cc]heffile.lock
 
 # Vagrant
