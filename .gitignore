@@ -18,3 +18,11 @@
 
 # Ignore application configuration
 /config/application.yml
+
+# Ignore Chef & Librarian files
+chef/cookbooks
+chef/tmp
+[Cc]heffile.lock
+
+# Vagrant
+/.vagrant
