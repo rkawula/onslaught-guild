@@ -24,7 +24,7 @@ module SessionsHelper
     end
 
     def permission
-    	logged_in ? current_user.permission_level : GUEST_PERMISSION_LEVEL
+    	logged_in? ? current_user.permission_level : GUEST_PERMISSION_LEVEL
     end
 
     def auth_hash

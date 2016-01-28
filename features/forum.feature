@@ -2,8 +2,8 @@ Feature: Forums
 
 	Scenario: There are forums in the db
 		Given I am not logged in
-		And there is a forum named "Applications" visible by "public"
-		And there is a forum named "General" visible by "public"
+		And there is a forum named "Applications" visible by "guests"
+		And there is a forum named "General" visible by "guests"
 		And there is a forum named "Guild Hall" visible by "members"
 		And there is a forum named "Raiding" visible by "members"
 		And there is a forum named "Class" visible by "members"

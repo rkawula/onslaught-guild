@@ -1,6 +1,6 @@
-<!DOCTYPE html>
-<head>
-<h3>Forum<h3>
-</head>
-<body>
-</body>
+%h3
+  Forum
+  %h3
+- @visible_forums.each do |f|
+  %p
+    #{f.name}
