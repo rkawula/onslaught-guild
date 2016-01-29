@@ -5,6 +5,8 @@ class ForumController < ApplicationController
 	end
 
 	def show
+		@forum = Forum.find_by id: params[:id]
+		@topics = Topic.where forum_id: params[:id]
 	end
 
 end
