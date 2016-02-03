@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   get 'apply', to: 'guild#apply'
 
   # Forum
-  resources :forum, only: [:index, :show]
+  resources :forum, only: [:index, :show] do
+    resources :topic, only: [:show]
+  end
+
 
 end

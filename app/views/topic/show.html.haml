@@ -1,0 +1,5 @@
+%h3
+  #{@topic.title}
+- @posts.each do |p|
+  #{p.content}
+  %p Posted by #{p.author_id}
