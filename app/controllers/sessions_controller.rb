@@ -8,16 +8,16 @@ class SessionsController < ApplicationController
     @user = User.find_or_create(auth_hash)
 	  reset_session
 	  session[:user_id] = @user.id
-	  redirect_to root_url
+	  redirect_to root_path
   end
 
   def destroy
     reset_session
-    redirect_to root_url
+    redirect_to root_path
   end
 
   def failure
-  	redirect_to root_url
+  	redirect_to root_path
   end
 
 end

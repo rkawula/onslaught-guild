@@ -1,5 +1,6 @@
 Given(/^I am not logged in$/) do
-	visit logout_path
+	visit root_path
+	click_link "Log out" if page.has_content? "Log out"
 end
 
 Given(/^there is a forum named "([^"]*)" visible by "([^"]*)"$/) do |forum_name, visibility|
@@ -30,9 +31,9 @@ Given(/^I am logged in as a "([^"]*)" user$/) do |user_type|
 	permission_level = 5
 	if user_type == "public"
 		permission_level = 4
-	elsif user_type == "members"
+	elsif user_type == "member"
 		permission_level = 3
-	elsif user_type == "officers"
+	elsif user_type == "officer"
 		permission_level = 2
 	end
 	User.create permission_level: permission_level
