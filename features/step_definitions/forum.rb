@@ -1,6 +1,6 @@
 Given(/^I am not logged in$/) do
 	visit root_path
-	click_link "Log out" if page.has_content? "Log out"
+	click_link "Logout" if page.has_content? "Logout"
 end
 
 Given(/^there is a forum named "([^"]*)" visible by "([^"]*)"$/) do |forum_name, visibility|
