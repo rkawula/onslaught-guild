@@ -12,12 +12,18 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    reset_session
+    log_out
     redirect_to root_path
   end
 
   def failure
   	redirect_to root_path
   end
+
+  private
+    def log_out
+      session.delete(:user_id)
+      @current_user = nil
+    end
 
 end

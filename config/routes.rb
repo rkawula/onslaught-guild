@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # Log in/out
   get '/auth/:provider/callback', to: 'sessions#create'
   get '/login', to: 'sessions#new', :as => :login
-  delete '/logout', to: 'sessions#destroy', :as => :logout
+  delete 'logout', to: 'sessions#destroy'
   get '/auth/failure', to: 'sessions#failure'
   
   # Basic website sections
