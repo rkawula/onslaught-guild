@@ -27,7 +27,7 @@
       %ul.nav.navbar-nav.navbar-right
         %li
           - if logged_in?
-            = link_to 'Logout', logout_path
+            = link_to 'Logout', logout_path, method: :destroy
           - else
             = link_to 'Log in with Battle.net', login_path
     / /.navbar-collapse

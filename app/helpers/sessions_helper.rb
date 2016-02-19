@@ -30,5 +30,10 @@ module SessionsHelper
     def auth_hash
       request.env["omniauth.auth"]
     end
+
+    def log_out
+      session.delete(:user_id)
+      @current_user = nil
+    end
   
 end
