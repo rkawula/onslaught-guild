@@ -15,6 +15,7 @@ gem "omniauth-oauth2", "1.3.1"
 gem "omniauth-bnet", "1.1.0"
 gem 'figaro',					'1.1.1'
 gem 'rack-ssl-enforcer'
+gem 'thin'
 
 group :production do
   gem 'rails_12factor', 		'0.0.2'
